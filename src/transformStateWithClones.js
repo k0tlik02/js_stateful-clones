@@ -26,7 +26,10 @@ function transformStateWithClones(state, actions) {
       case 'clear':
         currentState = {};
         break;
+      default:
+        throw new Error('Error');
     }
+    // stateHistory must be in'for' couse we add currentState for saving history
     stateHistory.push(currentState);
   }
 
